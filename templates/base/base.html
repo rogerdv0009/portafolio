@@ -1,0 +1,34 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% {% block title %}{% endblock title %} %}</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "libraries/sweetalert/sweetalert2.min.css" %}">
+    <link rel="stylesheet" href="{% static "libraries/fontawesome/css/all.min.css" %}">
+    <link rel="stylesheet" href="{% static "libraries/bootstrap/css/bootstrap.min.css" %}">
+    <!--CSS adicionales por si son necesarios-->
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+
+    <header class="header">
+
+    </header>
+
+    {% block contain %}{% endblock contain %}
+
+    <footer class="footer">
+
+    </footer>
+
+    <!--Scripts del proyecto-->
+    <script src="{% static "libraries/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "libraries/bootstrap/js/bootstrap.bundle.js" %}"></script>
+    <script src="{% static "libraries/sweetalert/sweetalert2.all.min.js" %}"></script>
+    {% block javascript %}{% endblock javascript %}
+    <script src="{% static "js/main.js" %}"></script>
+</body>
+</html>
