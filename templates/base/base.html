@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% {% block title %}{% endblock title %} %}</title>
+    <title>{% block title %}{% endblock title %}</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{% static "libraries/sweetalert/sweetalert2.min.css" %}">
     <link rel="stylesheet" href="{% static "libraries/fontawesome/css/all.min.css" %}">
@@ -15,13 +15,37 @@
 <body>
 
     <header class="header">
-
+        <div class="bar_charge">
+            <div id="progress"></div>
+        </div>
+        <nav class="navegador container-fluid">
+            <a class="logo" href="">
+                <img src="" alt="">
+            </a>
+            <input type="checkbox" name="menu_link" id="menu_link" class="d_none">
+            <ul class="nav_menu">
+                <li class="nav_link">
+                    <a class="link" href="">Services</a>
+                </li>
+                <li class="nav_link">
+                    <a class="link" href="">Education</a>
+                </li>
+                <li class="nav_link">
+                    <a class="link" href="">Experiences</a>
+                </li>
+                <li class="nav_link">
+                    <a class="link" href="">Contact me</a>
+                </li>
+            </ul>
+            <button class="fas fa-sun"></button>
+            <label for="menu_link" class="fas fa-bars menu_link"></label>
+        </nav>
     </header>
 
     {% block contain %}{% endblock contain %}
 
     <footer class="footer">
-
+        <p>2024 - All Right Reserved By Roger Díaz Viamonte</p>
     </footer>
 
     <!--Scripts del proyecto-->
@@ -29,6 +53,6 @@
     <script src="{% static "libraries/bootstrap/js/bootstrap.bundle.js" %}"></script>
     <script src="{% static "libraries/sweetalert/sweetalert2.all.min.js" %}"></script>
     {% block javascript %}{% endblock javascript %}
-    <script src="{% static "js/main.js" %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>

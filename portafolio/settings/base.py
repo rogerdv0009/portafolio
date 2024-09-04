@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'apps.projects',
     'apps.technologies',
     'apps.testimonies',
+    'import_export'
 ]
 
 MIDDLEWARE = [
