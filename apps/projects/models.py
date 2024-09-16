@@ -8,7 +8,7 @@ from apps.technologies.models import Technology
 
 def validateImageSize(value):
     filesize = value.size
-    if filesize > 2 * 1024 * 1024:  # 1MB
+    if filesize > 2 * 1024 * 1024:  # 2MB
         raise ValidationError("El tamaño máximo permitido es 1MB")
 
 
