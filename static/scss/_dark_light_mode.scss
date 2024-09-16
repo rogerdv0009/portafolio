@@ -1,0 +1,131 @@
+/***DARK LIGHT MODE***/
+body.ligth_mode{
+    background-color: $bg_color_white;
+    color: black;
+    /*HEADER*/
+    .header{
+        background-color: $color_secundario_white;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.500);
+        .navegador{
+            .nav_menu{
+                background-color: $color_secundario_white;
+                .nav_link{
+                    .link{
+                        color: black;
+                        &:hover{
+                            color: $color_primario;
+                        }
+                    }
+                }
+            }
+            .menu_link{
+                color: black;
+            }
+        }
+    }
+    /*////////////////////////////////////////////////////////*/
+
+    /*ABOUT ME*/
+    .about_me_section{
+        background-color: $color_secundario_white;
+    }
+    /*////////////////////////////////////////////////////////*/
+
+    /*SERVICES SECTION*/
+    .services_section{
+        .services_section_container{
+            .service{
+                background-color: $color_secundario_white;
+            }
+        }
+    }
+    /*////////////////////////////////////////////////////////*/
+
+    /*PROJECTS SECTION*/
+    .projects_section{
+        background-color: $color_secundario_white;
+        .projects_container{
+            .mySwiperProjects{
+                .swiper-wrapper{
+                    .swiper-slide{
+                        .project{
+                            box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.600);
+                            .project_description{
+                                a{
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*////////////////////////////////////////////////////////*/
+
+    /*EXPERIENCES EDUCATION SECTION*/
+    .experiences_education_section{
+        .exp_edu_container{
+            .educations_container{
+                border-left: 1px solid gray;
+                .education{
+                    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.600);
+                    background-color: white;
+                    &::before{
+                        border-color: $color_primario;
+                        background-color: white;
+                    }
+                    &::after{
+                        background-color: white;
+                    }
+                    &:hover{
+                        box-shadow: 0px 1px 2px rgba(16, 185, 129, 0.600);
+                    }
+                }
+            }
+            .experiences_container{
+                .experience{
+                    background-color: $color_secundario_white;
+                    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.600);
+                    &:hover{
+                        box-shadow: 0px 1px 2px rgba(16, 185, 129, 0.600);
+                    }
+                    h5{
+                        color: gray;
+                    }
+                    .project_technologies{
+                        border-bottom-color: black;
+                    }
+                }
+            }
+        }
+    }
+    /*////////////////////////////////////////////////////////*/
+
+    /***TECHOLOGIES SECTION***/
+    .technologies_section{
+        background-color: $color_secundario_white;
+        .technologies_container{
+            .technology{
+                background-color: $bg_color_white;
+            }
+        }
+    }
+    /*////////////////////////////////////////////////////////*/
+    /***CONTACT SECTION***/
+    .contact_section{
+        background-color: $color_secundario_white;
+        .contact_container{
+            .contact_description{
+                .contact_item{
+                    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.600);
+                    .contact_item_text{
+                        p{
+                            color: gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

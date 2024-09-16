@@ -1,0 +1,37 @@
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    /***GENERAL***/
+    section{
+        padding: 40px 20px;
+    }
+    /***ABOUT ME SECTION***/
+    .about_me_section{
+        padding: 100px 20px 40px;
+    }
+    /***PROJECTS SECTION***/
+    .projects_section{
+        padding: 40px 20px;
+        .projects_container{
+            .mySwiperProjects{
+                .swiper-wrapper{
+                    padding-bottom: 70px;
+                }
+            }
+        }
+    }
+    /***TECHNOLOGIES SECTION***/
+    .technologies_section{
+        .technologies_container{
+            .first_text{
+                h6{
+                    text-align: center;
+                }
+            }
+        }
+    }
+    /***SUSCRIPTION SECTION***/
+    .suscription_section{
+        padding: 40px 30px;
+    }
+
+}

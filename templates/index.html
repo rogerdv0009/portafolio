@@ -3,36 +3,292 @@
 {% block title %}RogerDV Developer{% endblock title %}
 {% block styles %}
 
-<link rel="stylesheet" href="{% static "libraries/swiper/css/swiper-bundle.min.css" %}">
+<link rel="stylesheet" href="{% static 'libraries/swiper/css/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'libraries/animate/animate.min.css' %}">
 
 {% endblock styles %}
 
 {% block contain %}
 
-    <section class="about_me_section">
+<section class="about_me_section" id="about_me_section">
+    <div class="about_me_container container-fluid">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-md-6">
+                <div class="about_me_content">
+                    <span>Hi there. I'm...</span>
+                    <div class="about_me_name">
+                        <h2>Roger</h2>
+                        <h2>Díaz</h2>
+                    </div>
+                    <p>
+                        I am a qualified web developer with no less than 2 years of experience. I can apply my
+                        experience with the different technologies that I currently master as well as the
+                        adaptation and integration of new ones to efficiently contribute to the daily workflow.
+                    </p>
+                    <div class="about_me_socials">
+                        <a title="Facebook" href="http://" target="_blank" rel="noopener noreferrer"
+                            class="fab fa-facebook-f"></a>
+                        <a title="Twitter" href="http://" target="_blank" rel="noopener noreferrer"
+                            class="fab fa-twitter"></a>
+                        <a title="Instagram" href="http://" target="_blank" rel="noopener noreferrer"
+                            class="fab fa-instagram"></a>
+                        <a title="Linked In" href="http://" target="_blank" rel="noopener noreferrer"
+                            class="fab fa-linkedin-in"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="about_me_image">
+                    <img src="{% static 'img/about-image.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    </section>
+<section class="services_section" id="services_section">
+    <div class="header_section">
+        <h5>Services</h5>
+        <h2>Specialized In</h2>
+    </div>
+    <div class="services_section_container container-fluid">
+        <div class="row">
+            {% if services %}
+            {% for service in services %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="service wow animate__fadeInUp" data-wow-duration="2s">
+                    <i class="{{ service.icon }}"></i>
+                    <h4>{{ service.title }}</h4>
+                    <p>{{ service.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h2>There are currently no services in the database.</h2>
+            {% endif %}
 
-    <section class="services_section">
+        </div>
+    </div>
+</section>
 
-    </section>
+<main class="projects_section" id="projects_section">
+    <div class="header_section">
+        <h5>My projects</h5>
+        <h2>Featured Portfolio</h2>
+    </div>
+    <div class="projects_container container-fluid wow animate__fadeInUp" data-wow-duration="2s">
+        {% if projects %}
+        <div class="swiper mySwiperProjects">
+            <div class="swiper-wrapper">
+                {% for project in projects %}
+                <div class="swiper-slide">
+                    <div class="project">
+                        {% if project.image %}
+                        <figure class="project_image">
+                            <img src="media/{{ project.image }}" alt="">
+                        </figure>
+                        {% else %}
+                        <figure class="project_image">
+                            <img src="{% static 'img/sinfoto.png' %}" alt="">
+                        </figure>
+                        {% endif %}
+                        <div class="project_description">
+                            <a href="#">
+                                <h4>{{ project.title }}</h4>
+                            </a>
+                            {% if project.getTechnologies %}
+                            <div class="project_technologies">
+                                {% for technology in project.getTechnologies %}
+                                <p>{{ technology }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        {% else %}
+        <h2>There are currently no projects in the database.</h2>
+        {% endif %}
+    </div>
+</main>
 
-    <main class="projects_section">
+<section class="experiences_education_section" id="experiences_education_section">
+    <div class="header_section">
+        <h5>learning & Career</h5>
+        <h2>Educations & Experiences</h2>
+    </div>
+    <div class="exp_edu_container container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="educations_container wow animate__fadeInLeft" data-wow-duration="2s">
+                    {% if educations %}
+                    {% for education in educations %}
+                    <div class="education">
+                        <h4>{{ education.title }}</h4>
+                        <p>{{ education.subtitle }}</p>
+                        <h5>{{ education.start_date }} - {{ education.end_date }}</h5>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <h2>There are currently no educations in the database.</h2>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="experiences_container wow animate__fadeInUp" data-wow-duration="2s">
+                    {% if experiences %}
+                    {% for experience in experiences %}
+                    <div class="experience">
+                        <h4>{{ experience.title }}</h3>
+                            <h5>{{ experience.city }}</h5>
+                            {% if experience.getTechnologies %}
+                            <div class="project_technologies">
+                                {% for technology in experience.getTechnologies %}
+                                <p>{{ technology }}</p>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                            {% if experience.getActions %}
+                            <ul>
+                                {% for action in experience.getActions %}
+                                <li>{{ action }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <h2>There are currently no experiences in the database.</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    </main>
+<section class="technologies_section" id="technologies_section">
+    <div class="header_section">
+        <h5>Skills</h5>
+        <h2>Work Technologies</h2>
+    </div>
+    <div class="technologies_container container-fluid">
+        <div class="first_text">
+            <h6>
+                With 2 years of experience I have developed skills and gained knowledge with various web development
+                technologies currently used in the community
+            </h6>
+        </div>
+        {% if technologies %}
+        <div class="row justify-content-center">
+            {% for technology in technologies %}
+            <div class="col-4 col-sm-3 col-md-2 col-lg-1">
+                <div class="technology wow animate__fadeInUp" data-wow-duration="2s">
+                    <figure class="technology_image">
+                        <img src="media/{{ technology.image }}" alt="">
+                    </figure>
+                    <h6>{{ technology.title }}</h6>
+                    {% if technology.ListOfStars != None %}
+                    <div class="technology_stars">
+                        {% for star in technology.ListOfStars %}
+                        <i class="{{ star }}"></i>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <h2>There are currently no technologies in the database.</h2>
+        {% endif %}
+    </div>
+</section>
 
-    <section class="experiences_section">
+<section class="suscription_section" id="suscription_section">
+    <div class="header_section">
+        <h5>CTA</h5>
+        <h2>Work Together</h2>
+    </div>
+    <div class="suscription_container container-fluid wow animate__fadeInUp" data-wow-duration="2s">
+        <div class="circle_gradient"></div>
+        <h2>Let's Create Your Big Project Together.</h2>
+        <p>
+            Let's embark on a collaborative journey. Let's combine creativity and expertise, using cutting-edge
+            technology to bring your vision to life. Let's build the future together, break barriers, and build
+            something extraordinary. Your big project is a shared adventure, and we're here to make it extraordinary.
+        </p>
+        <a href="">Hire me</a>
+    </div>
+</section>
 
-    </section>
-
-    <section class="education_section">
-
-    </section>
+<section class="contact_section" id="contact_section">
+    <div class="header_section">
+        <h5>Contact me</h5>
+        <h2>Get in Touch</h2>
+    </div>
+    <div class="contact_container container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="contact_description">
+                    <div class="contact_item wow animate__fadeInLeft" data-wow-duration="2s">
+                        <i class="fas fa-map-pin"></i>
+                        <div class="contact_item_text">
+                            <h5>Address</h5>
+                            <p>
+                                Bayamo-Granma, Cuba
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact_item wow animate__fadeInLeft" data-wow-duration="2s">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact_item_text">
+                            <h5>Phone</h5>
+                            <p>
+                                (+53)54803162
+                            </p>
+                        </div>
+                    </div>
+                    <div class="contact_item wow animate__fadeInLeft" data-wow-duration="2s">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact_item_text">
+                            <h5>Email</h5>
+                            <p>
+                                rogerdv0009@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="contact_map wow animate__fadeInUp" data-wow-duration="2s">
+                    {% if map %}
+                        {{ map|safe }}
+                        {% else %}
+                        <h2>The map does not load</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock contain %}
 
 {% block javascript %}
 
 <script src="{% static 'libraries/swiper/js/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'libraries/wow/wow.min.js' %}"></script>
+<script>
+    wow = new WOW({
+        offset: 10,
+    });
+    wow.init();
+</script>
 
 {% endblock javascript %}

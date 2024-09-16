@@ -1,0 +1,73 @@
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    /***GENERAL***/
+    section{
+        padding: 60px 40px;
+    }
+    /***ABOUT ME SECTION***/
+    .about_me_section{
+        .about_me_container{
+            .about_me_content{
+                .about_me_name{
+                    h2{
+                        font-size: 50px;
+                    }
+                }
+            }
+            .about_me_image{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    height: 480px;
+                }
+            }
+        }
+    }
+    /***SERVICES SECTION***/
+    .services_section{
+        .services_section_container{
+            .service{
+                padding: 40px;
+            }
+        }
+    }
+    /***PROJECTS SECTION***/
+    .projects_section{
+        padding: 60px 40px;
+        .projects_container{
+            .mySwiperProjects{
+                .swiper-wrapper{
+                    padding-bottom: 50px;
+                    .swiper-slide{
+                        .project{
+                            .project_image{
+                                img{
+                                    height: 200px;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /***SUSCRIPTION SECTION***/
+    .suscription_section{
+        padding: 60px 50px;
+        .suscription_container{
+            padding: 80px 180px;
+            gap: 40px;
+            .circle_gradient{
+                height: 200px;
+                width: 200px;
+                right: -80px;
+                bottom: -80px;
+            }
+            h2{
+                font-size: 40px;
+            }
+        }
+    }
+}

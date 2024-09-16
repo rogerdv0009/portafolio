@@ -25,3 +25,13 @@ class Technology(BaseModel):
 
     def __str__(self):
         return self.title
+
+    def ListOfStars(self):
+        if self.stars > 0:
+            stars_list = []
+            star_class = "fas fa-star"
+            for i in range(self.stars):
+                stars_list.append(star_class)
+            return stars_list
+        else:
+            return None

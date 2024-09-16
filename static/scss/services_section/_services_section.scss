@@ -1,0 +1,35 @@
+/***SERVICES SECTION***/
+.services_section{
+    .services_section_container{
+        padding-top: 40px;
+        .service{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            background-color: $color_secundario;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: all .5s;
+            border: 1px solid transparent;
+            &:hover{
+                border-color: $color_primario;
+            }
+            i{
+                padding: 15px;
+                background-color: rgba(16, 185, 129, 0.100);
+                border-radius: 8px;
+                color: $color_primario;
+            }
+            h4{
+                text-align: center;
+                font-weight: 700;
+            }
+            p{
+                text-align: center;
+            }
+        }
+    }
+}

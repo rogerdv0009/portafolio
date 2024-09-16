@@ -1,0 +1,45 @@
+.technologies_section{
+    background-color: $color_secundario;
+    .technologies_container{
+        padding-top: 40px;
+        .first_text{
+            padding-bottom: 40px;
+        }
+        .technology{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background-color: $edsk_color;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 1px $color_primario;
+            &:hover{
+                .technology_image{
+                    img{
+                        filter: grayscale(0);
+                    }
+                }
+            }
+            .technology_image{
+                margin: 0;
+                padding: 0;
+                img{
+                    max-width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    filter: grayscale(10);
+                    transition: all .5s;
+                }
+            }
+            h6{
+                font-size: 10px;
+            }
+            .technology_stars{
+                font-size: 8px;
+            }
+        }
+    }
+}

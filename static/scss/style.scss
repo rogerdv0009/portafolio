@@ -1,7 +1,14 @@
 @import "general";
 @import "navegation";
 @import "about_me/about_me";
+@import "services_section/services_section";
 @import "projects_section/projects_section";
-@import "education_section/education_section";
+@import"experiences_educations_section/experience_educations_section";
+@import "technologies_section/technologies_section";
+@import "suscription_section/suscription_section";
+@import "contact_section/contact_section";
 @import "footer";
-@import "animations";
+@import "dark_light_mode";
+@import "portafolio_responsive/md";
+@import "portafolio_responsive/lg";
+@import "portafolio_responsive/xl";

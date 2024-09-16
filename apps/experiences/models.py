@@ -36,3 +36,11 @@ class Experience(BaseModel):
 
     def __str__(self):
         return self.title
+
+    def getTechnologies(self):
+        technologies = [technology for technology in self.technologies.all().values_list('title', flat=True)]
+        return technologies
+
+    def getActions(self):
+        actions = [action for action in self.actions.all().values_list('title', flat=True)]
+        return actions

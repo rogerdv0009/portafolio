@@ -1,0 +1,94 @@
+.experiences_education_section{
+    .exp_edu_container{
+        padding-top: 40px;
+        .educations_container{
+            border-left: 1px solid white;
+            padding-left: 25px;
+            margin-bottom: 40px;
+            .education{
+                border-radius: 8px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: start;
+                gap: 20px;
+                padding: 20px;
+                background-color: $color_secundario;
+                position: relative;
+                transition: all .5s;
+                box-shadow: 0 1px 2px rgba(255, 255, 255, 0.600);
+                margin-bottom: 20px;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    border: 3px solid white;
+                    border-radius: 50%;
+                    background-color: $color_primario;
+                    top: 46%;
+                    left: -35px;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    height: 20px;
+                    width: 20px;
+                    background-color: $color_secundario;
+                    top: 46%;
+                    left: -5px;
+                    transform: rotate(45deg);
+                }
+                &:hover{
+                    box-shadow: 0px 1px 2px rgba(16, 185, 129, 0.600);
+                }
+                h4{
+                    font-weight: 700;
+                }
+            }
+        }
+        .experiences_container{
+            .experience{
+                background-color: $color_secundario;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: start;
+                gap: 20px;
+                box-shadow: 0px 1px 2px rgba(255, 255, 255, 0.600);
+                border-radius: 8px;
+                transition: all .5s;
+                &:hover{
+                    box-shadow: 0px 1px 2px rgba(16, 185, 129, 0.600);
+                }
+                h4{
+                    font-weight: 700;
+                }
+                h5{
+                    color: whitesmoke;
+                }
+                .project_technologies{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    width: 100%;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid white;
+                    p{
+                        padding: 5px 10px;
+                        color: $color_primario;
+                        background-color: rgba(16, 185, 129, 0.100);
+                        border-radius: 8px;
+                    }
+                }
+                ul{
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}

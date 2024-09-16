@@ -8,7 +8,7 @@ from apps.technologies.models import Technology
 
 def validateImageSize(value):
     filesize = value.size
-    if filesize > 1 * 1024 * 1024:  # 1MB
+    if filesize > 2 * 1024 * 1024:  # 1MB
         raise ValidationError("El tamaño máximo permitido es 1MB")
 
 
@@ -30,3 +30,7 @@ class Project(BaseModel):
 
     def __str__(self):
         return self.title
+
+    def getTechnologies(self):
+        technologies = [technology for technology in self.technologies.all().values_list('title', flat=True)]
+        return technologies

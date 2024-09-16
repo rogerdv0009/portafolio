@@ -7,27 +7,34 @@ $edsk_color: rgb(30 41 59);
 $test_color: rgb(51 65 85);
 $font_size_var: 16px;
 $espaciado: 1.7;
+/***VARIABLES WHITE***/
+$color_secundario_white: white;
+$bg_color_white: whitesmoke;
+$test_color_white:rgb(229 231 235);
 /***GENERAL***/
 body{
+    position: relative;
     margin: 0;
     padding: 0;
     height: 100vh;
     font-size: $font_size_var;
     line-height: $espaciado;
     background-color: $bg_color;
+    color: white;
+}
+h2,p,h3,h4,h1{
+    margin: 0;
+    padding: 0;
 }
 section{
-    padding: 60px 10px;
+    padding: 40px 10px;
 }
-.bar_charge{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    #progress{
-        height: 5px;
-        width: 0;
-        background: linear-gradient(to right, $color_primario,rgb(10, 80, 56));
-        z-index: 100;
+.header_section{
+    h5{
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+        font-weight: 700;
     }
 }

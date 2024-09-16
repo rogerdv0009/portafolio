@@ -1,0 +1,48 @@
+.suscription_section{
+    padding: 40px 20px;
+    .header_section{
+        padding-bottom: 40px;
+    }
+    .suscription_container{
+        background: linear-gradient(to bottom, $color_primario,rgb(10, 80, 56));
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        .circle_gradient{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, rgb(147, 247, 213),$color_primario);
+            position: absolute;
+            right: -50px;
+            bottom: -50px;
+        }
+        h2{
+            text-align: center;
+            font-weight: 700;
+            font-size: 25px;
+            color: white;
+        }
+        p{
+            color: white;
+            text-align: center;
+        }
+        a{
+            padding: 10px 20px;
+            color: $color_primario;
+            text-decoration: none;
+            background-color: white;
+            border-radius: 8px;
+            transition: all .5s;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}

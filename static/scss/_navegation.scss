@@ -1,9 +1,24 @@
 /***NAVEGATION***/
 .header{
     background-color: $navbar_color;
-    position: sticky;
-    top: 0;
+    position: fixed;
+    width: 100%;
+    top: 0px;
     height: 70px;
+    box-shadow: 0 3px 3px rgba(255, 255, 255, 0.500);
+    z-index: 999;
+    .bar_charge{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        #progress{
+            height: 5px;
+            width: 0;
+            background: linear-gradient(to right, $color_primario,rgb(10, 80, 56));
+            z-index: 100;
+        }
+    }
     .navegador{
         display: flex;
         justify-content: space-between;
@@ -19,7 +34,6 @@
             width: 100%;
             transition: all .5s;
             opacity: 0;
-            padding: 0;
             background-color: $navbar_color;
             z-index: -1;
             padding: 30px 5px;
@@ -33,10 +47,16 @@
                     border-radius: 5px;
                     text-transform: uppercase;
                     text-decoration: none;
+                    justify-content: space-between;
+                    align-items: center;
                     color: white;
                     transition: all .8s;
+                    gap: 10px;
                     &:hover{
-                        box-shadow: 0 5px 8px $color_primario;
+                        color: $color_primario;
+                    }
+                    i{
+                        font-size: 20px;
                     }
                 }
             }
@@ -55,16 +75,45 @@
                 transform: rotate(0);
             }
         }
-        button{
+        .switch{
             font-size: 22px;
             background-color: white;
             color: black;
-            padding: 5px;
-            border-radius: 50%;
+            padding: 0 5px;
+            width: 60px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            border-radius: 100px;
             border: none;
             transition: all .5s;
-            &:hover{
-                color: $color_primario;
+            i{
+                font-size: 16px;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                right: 1px;
+                left: unset;
+                height: 25px;
+                width: 25px;
+                border-radius: 50%;
+                background: linear-gradient(to right, $color_primario,rgb(10, 80, 56));
+                transition: all .5s;
+            }
+        }
+        .switch.ligth_mode{
+            border: 1px solid $navbar_color;
+            background-color: $navbar_color;
+            i{
+                color: white;
+            }
+            &::before{
+            transform: translateX(-30px);
+            background: linear-gradient(to right,rgb(10, 80, 56), $color_primario);
+            transition: all .5s;
             }
         }
     }
